@@ -46,5 +46,10 @@
 		"typo3/cms-tstemplate": "^12.4.0",
 		"typo3/cms-viewpage": "^12.4.0",
 		"typo3/cms-webhooks": "^12.4.0"
-	}
+	},
+	"autoload": {
+        "psr-4": {
+            "Dengram\\DengramPackage\\": "Classes"
+        }
+    }
 }

@@ -1,0 +1,45 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="Banner">
+
+   <f:render partial="Banner/TopBanner" arguments="{_all}" />
+
+</f:section>
+
+<f:section name="Main">
+
+<div class="section-full p-t80 p-b50 bg-white">
+   <div class="container">
+       <div class="section-content">
+          <div class="row">
+              <div class="col-lg-7 col-md-12 m-b30">
+                  <div class="welcome-carousel-outer m-b60">
+                      <div class="welcome-bg-block clearfix">
+                           <div class="welcome-carousel-1 ">
+                               <div class="owl-carousel home-carousel-1 owl-btn-bottom-left">
+                                   <!-- COLUMNS 1 -->
+                                   <div class="item">
+                                       <div class="ow-img">
+                                           <a href="#"><img src="/fileadmin/dengram/welcome-slider/1.jpg" alt=""></a>
+                                       </div>
+                                   </div>
+                                   
+                              </div>
+                           </div>                                 
+                      </div>
+                  </div>
+               </div>
+             <div class="col-lg-5 col-md-12 m-b30">
+                                           
+                   <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: 2}" />
+               </div>                            
+           </div>
+           
+       </div>
+   </div>
+</div>
+   
+
+</f:section>
+</html>

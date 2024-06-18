@@ -9,6 +9,9 @@
 ################
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:dengram_package/Configuration/TypoScript/Helper/DynamicContent.typoscript">
 
+# FRAMEWORK
+<INCLUDE_TYPOSCRIPT: source="EXT:dengram_package/Configuration/TypoScript/Bootstrap/setup.typoscript"
+
 
 ##############
 #### PAGE ####
@@ -16,7 +19,7 @@
 page = PAGE
 page {
     typeNum = 0
-    shortcutIcon = EXT:dengram_package/Resources/Public/Icons/favicon.ico
+    shortcutIcon = {$page.favicon.file}
 
     10 = FLUIDTEMPLATE
     10 {
@@ -60,6 +63,11 @@ page {
             1 = {$page.fluidtemplate.layoutRootPath}
         }
         dataProcessing {
+            1 = Dengram\DengramPackage\DataProcessing\ConstantsProcessor
+            1 {
+                as = theme
+                key = page.theme
+            }
             10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
             10 {
                 references.fieldName = media
@@ -70,7 +78,37 @@ page {
                 includeSpacer = 1
                 as = mainnavigation
             }
+            1553883874 = Dengram\DengramPackage\DataProcessing\StaticFilesProcessor
+            1553883874 {
+                files {
+                    normal = {$page.logo.file}
+                    inverted = {$page.logo.fileInverted}
+                }
+                as = logo
+            }
         }
+
+        variables {
+            pageTitle = TEXT
+            pageTitle.data = page:title
+            siteTitle = TEXT
+            siteTitle.data = siteLanguage:websiteTitle//site:websiteTitle//site:identifier
+            rootPage = TEXT
+            rootPage.data = leveluid:0
+        }
+    }
+
+    # Inline CSS with TypoScript
+    headerData {
+        10 = TEXT
+        10.value (
+            <style>
+                .welcome-bg-block {
+                    background-image: url('/fileadmin/dengram/welcome-slider/large-pic.jpg');
+                    background-size: cover;
+                }
+            </style>
+        )
     }
 
     meta {
@@ -145,6 +183,15 @@ page {
 
     includeCSS {
         dengram_package_layout = EXT:dengram_package/Resources/Public/Css/layout.min.css
+        bootstrap = EXT:dengram_package/Resources/Public/Css/bootstrap.min.css
+        custom = EXT:dengram_package/Resources/Public/Css/custom.css
+        loader = EXT:dengram_package/Resources/Public/Css/loader.css
+        magnific-popup = EXT:dengram_package/Resources/Public/Css/magnific-popup.min.css
+        owl.carousel = EXT:dengram_package/Resources/Public/Css/owl.carousel.min.css
+        rev-slider-4 = EXT:dengram_package/Resources/Public/Css/rev-slider-4.css
+        style = EXT:dengram_package/Resources/Public/Css/style.css
+        switcher = EXT:dengram_package/Resources/Public/Css/switcher
+        skin-1 = EXT:dengram_package/Resources/Public/Css/skin/skin-1.css
     }
 
     includeJSLibs {
@@ -156,7 +203,16 @@ page {
     }
 
     includeJSFooterlibs {
-
+        counterup = EXT:dengram_package/Resources/Public/JavaScript/counterup.min.js
+        custom = EXT:dengram_package/Resources/Public/JavaScript/custom.js
+        imagesloaded_pkgd = EXT:dengram_package/Resources/Public/JavaScript/imagesloaded.pkgd.min.js
+        isotope_pkgd = EXT:dengram_package/Resources/Public/JavaScript/isotope.pkgd.min.js
+        jquery_owl_filter = EXT:dengram_package/Resources/Public/JavaScript/jquery.owl-filter.js
+        magnific_popup = EXT:dengram_package/Resources/Public/JavaScript/magnific-popup.min.js
+        waypoints = EXT:dengram_package/Resources/Public/JavaScript/waypoints.min.js
+        waypoints_sticky = EXT:dengram_package/Resources/Public/JavaScript/waypoints-sticky.min.js
+        owl_carousel = EXT:dengram_package/Resources/Public/JavaScript/owl.carousel.min.js
+        shortcode = EXT:dengram_package/Resources/Public/JavaScript/shortcode.js
     }
 
     includeJSFooter {

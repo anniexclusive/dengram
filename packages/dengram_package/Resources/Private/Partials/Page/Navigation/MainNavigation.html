@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+    
+
+    <div class="header-nav navbar-collapse collapse nav-dark">
+        <ul class=" nav navbar-nav nav-line-animation">
+            <f:for each="{mainnavigation}" as="mainnavigationItem">
+                <li class="{f:if(condition: mainnavigationItem.active, then:'active')}">
+                    <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}">{mainnavigationItem.title}</a>
+
+                    <f:if condition="{mainnavigationItem.children}">
+                        <ul class="sub-menu">
+                            <f:for each="{mainnavigationItem.children}" as="child">
+                                <li>
+                                    <a href="{child.link}" target="{child.target}" title="{child.title}">{child.title}</a>
+                                </li>
+                            </f:for>                                          
+                        </ul>
+                    </f:if>
+                </li>
+            </f:for>                              
+        </ul>
+    </div>
+</html>

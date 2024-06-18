@@ -20,9 +20,21 @@ styles {
 ### PAGE ###
 ############
 page {
+    logo {
+        file = EXT:dengram_package/Resources/Public/Images/logo_pp.png
+        height = 
+        width = 
+        alt = 
+        linktitle = 
+    }
+
+    favicon {
+        file = EXT:dengram_package/Resources/Public/Icons/favicon_publicplan.ico
+    }
      fluidtemplate {
         layoutRootPath = EXT:dengram_package/Resources/Private/Layouts/Page/
         partialRootPath = EXT:dengram_package/Resources/Private/Partials/Page/
+        # cat=dengram package: templates/100/120; type=string; label=Template Root Path: Path to templates
         templateRootPath = EXT:dengram_package/Resources/Private/Templates/Page/
     }
     meta {
