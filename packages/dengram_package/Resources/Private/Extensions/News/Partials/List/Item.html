@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+
+		<div class="our-team-one">
+				<div class="team-bg">
+					<h4>{newsItem.title}</h4>
+				</div>
+				<div class="team-img">
+					<f:if condition="{newsItem.mediaPreviews}">
+						<f:then>
+							<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+								<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+								<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" />
+							</f:alias>
+							</n:link>
+								<ul class="list-unstyled">
+									<li><a href="javascript:void(0);" class="fa fa-google"></a></li>
+									<li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
+									<li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
+									<li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
+								</ul>
+							
+						</f:then>
+					</f:if>
+					
+				</div>
+		</div>	
+
+	
+</html>

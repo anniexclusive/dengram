@@ -1,0 +1,84 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  xmlns:rx="http://typo3.org/ns/Reelworx/RxShariff/ViewHelper"
+	  data-namespace-typo3-fluid="true">
+
+<f:layout name="Detail" />
+
+<!--
+	=====================
+		News/Detail.html
+-->
+
+<f:section name="content">
+	<f:if condition="{newsItem}">
+		<f:then> 
+		<!-- TESTIMONIAL SECTION START -->
+		<div class="section-full small-device p-t80 p-b50 bg-white bg-repeat" style="background-image:url(/fileadmin/dengram/banner/ptn-1.png)">
+			<div class="container">
+				<div class="section-content">
+					<div class="row">
+						<div class="col-lg-7 col-md-12 m-b30">
+							<div class="owl-carousel testimonial-home">
+								<div class="item">
+									<div class="testimonial-5">
+										<div class="testimonial-text">
+											<div class="testimonial-paragraph">
+												<span class="fa fa-quote-left site-text-primary"></span>
+											<f:format.raw>{newsItem.bodytext}</f:format.raw>
+											</div>
+										</div>
+										<div class="clearfix">
+											<div class="testimonial-detail clearfix">
+												<strong class="testimonial-name text-black">{newsItem.title}</strong>
+												<span class="testimonial-position p-t5">{newsItem.teaser}</span>
+											</div> 
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							<div class="wt-post-bottom  bdr-t-1 bdr-gray bdr-solid">
+								<ul>
+									<li class="post-like"><i class="fa fa-heart-o"></i><a href="#">5 <span>Likes</span></a> </li>
+									<li class="post-comment"><i class="fa fa-tag"></i><a href="#">Year 
+										<f:if condition="{newsItem.categories}">
+											<f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}" />
+										</f:if>
+									<span>Set</span></a> </li>                                                
+								</ul>                                    
+							</div> 
+						</div>
+						<div class="col-lg-5 col-md-12 m-b30">
+							<div class="project-detail-pic m-b30 p-t30">
+								<div class="wt-media">
+									<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+										<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" width="211px" />
+									</f:alias>
+								</div>
+							</div>
+							<div class="p-t0">
+								<ul class="social-icons social-square social-md social-darkest m-b0">
+									<li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
+									<li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
+									<li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
+									<li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
+									<li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div> <!-- row -->
+					
+				</div>
+			</div>
+		</div>   
+		<!-- TESTIMONIAL SECTION END -->  
+			
+
+		</f:then>
+		<f:else>
+			NO  DATA FOUND
+		</f:else>
+	</f:if>
+</f:section>
+</html>

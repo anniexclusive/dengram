@@ -1,17 +1,15 @@
 page {
     includeCSS {
         bootstrap = EXT:dengram_package/Resources/Public/Css/bootstrap.min.css
-        custom = EXT:dengram_package/Resources/Public/Css/custom.css
-        loader = EXT:dengram_package/Resources/Public/Css/loader.css
+        fontawesome = EXT:dengram_package/Resources/Public/Css/fontawesome/css/font-awesome.min.css
         magnific-popup = EXT:dengram_package/Resources/Public/Css/magnific-popup.min.css
-        owl.carousel = EXT:dengram_package/Resources/Public/Css/owl.carousel.min.css
-        rev-slider-4 = EXT:dengram_package/Resources/Public/Css/rev-slider-4.css
+        owl-carousel = EXT:dengram_package/Resources/Public/Css/owl.carousel.min.css
         style = EXT:dengram_package/Resources/Public/Css/style.css
-        switcher = EXT:dengram_package/Resources/Public/Css/switcher
         skin-1 = EXT:dengram_package/Resources/Public/Css/skin/skin-1.css
     }
     includeJSFooterlibs {
         bootstrap = EXT:dengram_package/Resources/Public/JavaScript/bootstrap.min.js
-        jquery = EXT:dengram_package/Resources/Public/JavaScript/jquery-3.7.1.min.js
+        jquery = https://code.jquery.com/jquery-3.7.1.min.js
+        jquery.external = 1
     }
 }

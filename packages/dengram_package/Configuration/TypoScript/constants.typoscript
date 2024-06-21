@@ -1,7 +1,7 @@
 ######################
 #### DEPENDENCIES ####
 ######################
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript">
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript'
 
 
 ##############################
@@ -51,6 +51,17 @@ page {
             trackingID =
             anonymizeIp = 1
         }
+    }
+}
+
+################################
+### NEWS EXTENSION OVERRIDES ###
+################################
+plugin.tx_news {
+    view {
+        templateRootPath = EXT:dengram_package/Resources/Private/Extensions/News/Templates/
+        partialRootPath = EXT:dengram_package/Resources/Private/Extensions/News/Partials/
+        layoutRootPath = EXT:dengram_package/Resources/Private/Extensions/News/Layouts/
     }
 }
 

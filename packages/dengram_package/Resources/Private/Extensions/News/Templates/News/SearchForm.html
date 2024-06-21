@@ -1,0 +1,47 @@
+<html
+	xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/SearchForm.html
+-->
+
+<f:section name="content">
+	<div class="section-full small-device  p-tb80">
+		<div class="section-content overlay-wraper ">
+			<div class="container">
+				<!-- TITLE START -->
+				<div class="section-head text-center">
+					<div class="wt-separator-outer separator-center">
+						<div class="wt-separator">
+							<span class="site-text-primary text-uppercase sep-line-one ">Member search form</span>
+						</div>
+					</div>
+					<h2>Dengram Lux Fiat</h2>
+				</div>                                            
+				<!-- TITLE END -->  
+				
+				<n:searchForm object="{search}" class="contact-form" name="search" pageUid="{settings.listPid}">
+					<div class="contact-one">
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<div class="form-group">
+									<label for="news-subject">Name</label>
+									<f:form.textfield id="news-subject" property="subject" class="form-control"/>
+								</div>
+							</div>
+							
+							<div class="text-left col-md-12">
+								<f:form.submit value="{f:translate(key:'search-start')}" class="site-button site-btn-effect"/>
+							</div>
+						</div>
+					</div> 
+				</n:searchForm>
+			</div>
+		</div>
+
+		
+	</div>
+</f:section>
+</html>

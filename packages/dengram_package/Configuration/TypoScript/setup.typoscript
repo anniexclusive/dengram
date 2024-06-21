@@ -1,16 +1,16 @@
 ######################
 #### DEPENDENCIES ####
 ######################
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript">
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
 
 
 ################
 #### HELPER ####
 ################
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:dengram_package/Configuration/TypoScript/Helper/DynamicContent.typoscript">
+@import 'EXT:dengram_package/Configuration/TypoScript/Helper/DynamicContent.typoscript'
 
 # FRAMEWORK
-<INCLUDE_TYPOSCRIPT: source="EXT:dengram_package/Configuration/TypoScript/Bootstrap/setup.typoscript"
+@import 'EXT:dengram_package/Configuration/TypoScript/Bootstrap/setup.typoscript'
 
 
 ##############
@@ -178,20 +178,15 @@ page {
     }
 
     includeCSSLibs {
-
+        font_poppins = https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,800,800i,900
+        font_poppins.external = 1
+        font_martel = https://fonts.googleapis.com/css?family=Martel:200,300,400,600,700,800,900
+        font_martel.external = 1
     }
 
     includeCSS {
         dengram_package_layout = EXT:dengram_package/Resources/Public/Css/layout.min.css
-        bootstrap = EXT:dengram_package/Resources/Public/Css/bootstrap.min.css
-        custom = EXT:dengram_package/Resources/Public/Css/custom.css
-        loader = EXT:dengram_package/Resources/Public/Css/loader.css
-        magnific-popup = EXT:dengram_package/Resources/Public/Css/magnific-popup.min.css
-        owl.carousel = EXT:dengram_package/Resources/Public/Css/owl.carousel.min.css
-        rev-slider-4 = EXT:dengram_package/Resources/Public/Css/rev-slider-4.css
-        style = EXT:dengram_package/Resources/Public/Css/style.css
-        switcher = EXT:dengram_package/Resources/Public/Css/switcher
-        skin-1 = EXT:dengram_package/Resources/Public/Css/skin/skin-1.css
+        
     }
 
     includeJSLibs {
@@ -218,6 +213,28 @@ page {
     includeJSFooter {
         dengram_package_scripts = EXT:dengram_package/Resources/Public/JavaScript/Dist/scripts.js
     }
+}
+
+plugin.tx_news {
+	view {
+		templateRootPaths {
+			0 = EXT:news/Resources/Private/Templates/
+			10 = EXT:dengram_package/Resources/Private/Extensions/News/Templates/
+			15 = {$plugin.tx_news.view.templateRootPath}
+		}
+
+		partialRootPaths {
+			0 = EXT:news/Resources/Private/Partials/
+			10 = EXT:dengram_package/Resources/Private/Extensions/News/Partials/
+			15 = {$plugin.tx_news.view.partialRootPath}
+		}
+
+		layoutRootPaths {
+			0 = EXT:news/Resources/Private/Layouts/
+			10 = EXT:dengram_package/Resources/Private/Extensions/News/Layouts/
+			15 = {$plugin.tx_news.view.layoutRootPath}
+		}
+	}
 }
 
 
