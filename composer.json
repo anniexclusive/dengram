@@ -52,5 +52,8 @@
         "psr-4": {
             "Dengram\\DengramPackage\\": "Classes"
         }
-    }
+    },
+	"require-dev": {
+		"deployer/deployer": "^7.4"
+	}
 }

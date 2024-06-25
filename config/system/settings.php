@@ -11,8 +11,11 @@ return [
     'DB' => [
         'Connections' => [
             'Default' => [
-                'charset' => 'utf8',
+                'charset' => 'utf8mb4',
                 'driver' => 'mysqli',
+                'dbname' => 'xcluzenm_typo3',
+                'password' => 's.CxMvmeT@-k',
+                'user' => 'xcluzenm_typo3_user',
             ],
         ],
     ],
